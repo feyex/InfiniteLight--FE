@@ -17,7 +17,7 @@
 
       <div class="ml-auto px-1 py-0 border-left">
         <a class="p-13"  data-offset="90">
-          {{user.name}} <br>
+          {{this.user.message?.firstname}} {{this.user.message?.lastname}} <br>
           <a (click)="logout()" class="p-11">Logout</a>
         </a>
       </div>
@@ -141,7 +141,7 @@
         <div class="greyRec py-3">
           <ul class="list-unstyled ">
             <li class="nav-item" [routerLink]="['/user/dashboard']" [routerLinkActive]="['active']">
-              <a class="nav-link" href="user/dashboard">
+              <a class="nav-link" [routerLink]="['/user/dashboard']">
                 <div class="row">
                   <div class="col-3">
                     <img src="../../../assets/img/grey/1 (1).png" height="22px" class="aa" alt="dashboard">
@@ -153,8 +153,8 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item" [routerLink]="['/user/manage_wallet']" [routerLinkActive]="['active']">
-              <a class="nav-link" href="user/manage_wallet">
+            <li class="nav-item" [routerLink]="['/user/manage-wallet']" [routerLinkActive]="['active']">
+              <a class="nav-link" [routerLink]="['/user/manage-wallet']">
                 <div class="row">
                   <div class="col-3">
                     <img src="../../../assets/img/grey/1 (11).png" class="aa" height="22px" alt="manage wallet">
@@ -166,8 +166,8 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item" [routerLink]="['/user/pay_bills']" [routerLinkActive]="['active']">
-              <a class="nav-link" href="user/pay_bills">
+            <li class="nav-item" [routerLink]="['/user/pay-bills']" [routerLinkActive]="['active']">
+              <a class="nav-link" [routerLink]="['/user/pay-bills']">
                 <div class="row">
                   <div class="col-3">
                     <img src="../../../assets/img/grey/1 (6).png" class="aa" height="22px" alt="pay bills">
@@ -218,7 +218,7 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item" [routerLink]="['/user/profile' || '/user/change_password']" [routerLinkActive]="['active']">
+            <li class="nav-item"  [routerLinkActive]="['active']">
               <a class="dropdown-toggle nav-link " href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" >
                 <div class="row">
                   <div class="col-3">
@@ -231,10 +231,10 @@
                 </div>
                 <ul class="collapse list-unstyled px-3" id="pageSubmenu">
                   <li>
-                    <a [routerLink]="['profile']">Profile</a>
+                    <a [routerLink]="['/user/profile']">Profile</a>
                   </li>
                   <li>
-                    <a [routerLink]="['change-password']">Change Password</a>
+                    <a [routerLink]="['/user/change-password']">Change Password</a>
                   </li>
 
                 </ul>

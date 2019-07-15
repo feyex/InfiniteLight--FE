@@ -12,6 +12,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
+login = {
+  email: "",
+  password: ""
+
+}
+
   public email: string;
   public password: string;
   public error: string;
@@ -26,18 +32,20 @@ export class LoginComponent implements OnInit {
   }
 
   public submit() {
-    console.log(this.email, this.password);
-    this.auth.login(this.email, this.password)
+    console.log(this.login.email,this.login.password);
+    this.auth.login(this.login.email, this.login.password)
       .pipe(first())
       .subscribe(
-
-        (result: any) => {
-          if (result.status === true && result.role === 'user') {
-            this.router.navigate(['user/dashboard']);
-          } else if (result.status === true && (result.role === 'admin')) {
-            this.router.navigate(['admin/dashboard']);
-          } else {
-            this.toast.error('Incorrect Email or Password.', 'Signup Error', {
+       
+        (result:any) =>{
+          if(result.status == true && result.role =="user"){
+            this.router.navigate(['user/dashboard'])
+          }
+           else if(result.status == true && (result.role =="admin")){
+            this.router.navigate(['admin/dashboard'])
+          }
+          else{
+            this.toast.error("Incorrect Email or Password.", "Signup Error", {
               timeOut: 4000,
               positionClass: 'toast-top-center'
             });

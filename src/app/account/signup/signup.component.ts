@@ -12,7 +12,16 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  signupForm: FormGroup;
+  signup = {
+    email : "", 
+    firstname : "",
+    lastname : "", 
+    phoneNumber: "",
+    password: ""
+
+  }
+
+  referralNum = Math.floor(Math.random() * 10000000000) + 999;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
@@ -21,26 +30,19 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.signupForm = this.formBuilder.group({
-      firstname:  ['', Validators.required],
-      lastname: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]]
-
-    });
  
   }
 
-  signup() {
-    const email = this.signupForm.value.email;
-    const firstname = this.signupForm.value.firstname;
-    const lastname = this.signupForm.value.lastname;
-    const phoneNumber = this.signupForm.value.phoneNumber;
-    const password= this.signupForm.value.password;
+  create() {
+    const email = this.signup.email;
+    const firstname = this.signup.firstname;
+    const lastname = this.signup.lastname;
+    const phoneNumber = this.signup.phoneNumber;
+    const password= this.signup.password;
+    const referral = this.referralNum;
     
-    console.log('mmm', email,firstname,phoneNumber,password,lastname)
-    this.authService.signin( email,firstname,lastname,phoneNumber,password).subscribe((res:any) => {
+    console.log('mmm', email,firstname,phoneNumber,password,lastname,referral)
+    this.authService.signin( email,firstname,lastname,phoneNumber,password,referral).subscribe((res:any) => {
     
       if(res.status == true){
         this.toast.success("User Registered Successfully.", "Signup", {

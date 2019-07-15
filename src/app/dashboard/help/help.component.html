@@ -28,15 +28,19 @@
                     <div class="col-lg-6 col-xs-12">
                         <div class="p-4" style="background: #f7f7f7;">
                             <p class="p-17">Report a Problem</p>
-                            <form (ngSubmit)="submit()">
-                                <input type="text" class="help form-control mb-4" name="fullname" [(ngModel)]="fullname"  placeholder="Name">
+                            <form #contactForm="ngForm" (ngSubmit)="submit()">
+                                <input type="text" class="help form-control mb-4"  value="{{this.user.message?.firstname}} {{this.user.message?.lastname}}" #fullname="ngModel" [(ngModel)]="contact.fullname"
+                                name="fullname" readonly placeholder="Name">
 
-                                <input type="tel" class="help form-control mb-4" name="phoneNumber" [(ngModel)]="phoneNumber" placeholder="Phone Number">
-                                <input type="email" class="help form-control mb-4" name="email" [(ngModel)]="email" placeholder="Email Address">
-                                <textarea id="Message" class="help form-control mb-4" name="message" [(ngModel)]="message" placeholder="Message"
+                                <input type="tel" class="help form-control mb-4" value="{{this.user.message?.phoneNumber}}" #phoneNumber="ngModel"
+                                [(ngModel)]="contact.phoneNumber" name="phoneNumber" readonly placeholder="Phone Number">
+    
+                                <input type="email" class="help form-control mb-4" value="{{this.user.message?.email}}" #email="ngModel" [(ngModel)]="contact.email" name="email" readonly placeholder="Email Address">
+
+                                <textarea id="Message" class="help form-control mb-4" name="message" #message="ngModel" [(ngModel)]="contact.message" placeholder="Message"
                                     rows="3"></textarea>
 
-                                <button type="submit" class="btn btn-Orange mb-2 ml-0"
+                                <button type="submit" [disabled]="!contactForm.form.valid" class="btn btn-Orange mb-2 ml-0"
                                     style="width: 150px;">REPORT</button>
                             </form>
                         </div>

@@ -23,9 +23,9 @@ export class HistoryComponent implements OnInit {
       this.auth.gettransactionId(params.id)
       .subscribe(user => {
         this.user = user;
-        this.user = Array.of (this.user);
-        console.log('this.transaction', this.user[0]._id);
-  });
+        // this.user = Array.of (this.user)
+        // co nsole.log('this.transaction',this.user);
+  })
 
 });
 

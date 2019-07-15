@@ -12,7 +12,8 @@ import { BillService } from './../../transactions/bill.service';
   styleUrls: ['./pay-bills.component.css']
 })
 export class PayBillsComponent implements OnInit {
-  user: any;
+  
+user: any;
 refNum = Math.floor(Math.random() * 10000000000) + 999;
 
 isLinear = false;
@@ -54,9 +55,10 @@ ngOnInit() {
     const amount = this.billformGroup.value.amount;
     const email = this.billformGroup.value.email;
     const ref = this.refNum;
+    const user_id = localStorage.userid;
     console.log('refNum', ref);
-    console.log('Hey, its me Paystack payment button');
-    this.billService.processPayment(bill, state, disco, meter, amount, email, ref)
+    console.log('Hey, its me Paystack payment button',user_id);
+    this.billService.processPayment(user_id,bill, state, disco, meter, amount, email, ref)
     .subscribe((res: any ) => {
       if (res.status === true) {
         console.log('Bill data saved to DB', res.status);
@@ -66,4 +68,3 @@ ngOnInit() {
   paymentCancel() {}
   paymentDone($event) {}
 }
-
