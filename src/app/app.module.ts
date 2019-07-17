@@ -10,6 +10,7 @@ import { MatInputModule, MatButtonModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ToastrModule } from 'ngx-toastr';
 import { Angular4PaystackModule } from 'angular4-paystack';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,7 @@ import { NavbarComponent } from './dashboard/navbar/navbar.component';
 export function tokenGetter() {
   return localStorage.getItem('access_token');
 }
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +82,7 @@ export function tokenGetter() {
     NavbarComponent,
   ],
   imports: [
+    HighchartsChartModule,
 BrowserModule,
   AppRoutingModule,
   FormsModule,

@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 import { User } from '../../auth/user';
 import { UserAuthService } from '../../auth/user-auth.service';
 import { ToastrService } from 'ngx-toastr';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-signup',
@@ -30,7 +31,17 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
- 
+  //   function toggle(button) {
+  //     var password = document.getElementById("password");
+  //     if (password.type == "password") {
+  //         button.innerHTML = "<i class='ion-eye-disabled' style='font-size: 20px; color: #ddd;'></i>";
+  //         password.type = "text";
+  //     }
+  //     else {
+  //         button.innerHTML = "<i class='ion-eye' style='font-size: 20px; color: #ddd;' ></i>";
+  //         password.type = "password";
+  //     }
+  // }
   }
 
   create() {

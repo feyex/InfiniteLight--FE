@@ -13,7 +13,7 @@
                 <form [formGroup]="billformGroup">
                     <mat-horizontal-stepper [linear]="isLinear" #stepper>
                     <mat-step [stepControl]="billformGroup">
-                        <ng-template matStepLabel>Initiate</ng-template>
+                        <ng-template matStepLabel>Initiate Payment</ng-template>
                     <div class="row">
                         <div class="col-lg-7 col-xs-12">
                             <!-- <p class="p-17">
@@ -53,7 +53,7 @@
                                 Enter your email
                             </p>
                             <input type="email"  formControlName="email" class="form-control mt-3 mb-4">
-                            <button mat-button class="mybtn btn-full px-4 py-2" matStepperNext type="button">Next</button>
+                            <button mat-button class="btn-Orange px-4 py-2" matStepperNext type="button">Next</button>
                         </div>
                     </div>
                     </mat-step>
@@ -62,8 +62,22 @@
                   <mat-step>
                     <ng-template matStepLabel>Review & Pay</ng-template>
                     <div class="w-100">
+                        <div class="row">
+                            <div class="col-2 mb-3">Bill</div>
+                            <div class="col-10 mb-3">{{billformGroup.value.bill}}</div>
+                            <div class="col-2 mb-3">State</div>
+                            <div class="col-10 mb-3">{{billformGroup.value.state}}</div>
+                            <div class="col-2 mb-3">Disco</div>
+                            <div class="col-10 mb-3">{{billformGroup.value.disco}}</div>
+                            <div class="col-2 mb-3">Meter</div>
+                            <div class="col-10 mb-3">{{billformGroup.value.meter}}</div>
+                            <div class="col-2 mb-3">Amount</div>
+                            <div class="col-10 mb-3">{{billformGroup.value.amount}}</div>
+                            <div class="col-2 mb-3">Email</div>
+                            <div class="col-10 mb-3">{{billformGroup.value.email}}</div>
+                        </div>
                     <!-- <p class="w-100">You are now done.</p> -->
-                    <ul style="margin-left: 20%; list-style-type: none;">
+                    <!-- <ul style="margin-left: 20%; list-style-type: none;">
                       <li>
                         Bill<strong>:&nbsp;{{billformGroup.value.bill}}</strong>
                       </li>
@@ -82,17 +96,17 @@
                       <li>
                        Email<strong>:&nbsp;{{billformGroup.value.email}}</strong>
                       </li>
-                    </ul>
+                    </ul> -->
                     </div><br/><br/>
                     <div style="margin-left: 20%;">
-                      <button mat-button class="mybtn btn-full px-2 py-2" matStepperPrevious>Back</button>&nbsp;&nbsp;
+                      <button mat-button class="btn-Orange px-2 py-2" matStepperPrevious>Back</button>&nbsp;&nbsp;
                       <angular4-paystack
                       [key]="'pk_test_5a8bec923a3f6471bc8d6a5824bd9d6075868940'"
                       [email]="billformGroup.value.email"
                       [amount]="billformGroup.value.amount * 100"
                       [ref]="billformGroup.value.ref"
                       [channels]="['card']"
-                      [class]="'mybtn btn-full px-4 py-2'"
+                      [class]="'btn-Orange px-4 py-2'"
                       (close)="paymentCancel()"
                       (callback)="paymentDone($event)"
                       (click)="processPayment()">Pay</angular4-paystack>
