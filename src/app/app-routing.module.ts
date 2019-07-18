@@ -115,6 +115,7 @@ const routes: Routes = [{ path: '', component: HomeComponent },
           { path: 'add_disco', component: AddDiscoComponent },
           { path: 'support', component: SupportComponent },
           { path: 'support_dashboard', component: SupportdashboardComponent },
+          { path: 'issueform', component: IssueformComponent },
 
   ]
 },
