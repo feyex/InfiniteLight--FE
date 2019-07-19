@@ -41,17 +41,17 @@ const routes: Routes = [{ path: '', component: HomeComponent },
   children: [
         { path: 'dashboard',
           component: DashboardComponent,
-          canActivate: [AuthGuard],
-          data: {
-            expectedRole: 'user'
-        }
+        //   canActivate: [AuthGuard],
+        //   data: {
+        //     expectedRole: 'user'
+        // }
       },
         { path: 'manage-wallet',
           component: ManageWalletComponent,
-          canActivate: [AuthGuard],
-        data: {
-          expectedRole: 'user'
-        }
+        //   canActivate: [AuthGuard],
+        // data: {
+        //   expectedRole: 'user'
+        // }
       },
         { path: 'pay-bills',
           component: PayBillsComponent
@@ -61,38 +61,38 @@ const routes: Routes = [{ path: '', component: HomeComponent },
         },
         { path: 'profile',
           component: ProfileComponent ,
-          canActivate: [AuthGuard],
-          data: {
-            expectedRole: 'user'
-          }
+          // canActivate: [AuthGuard],
+          // data: {
+          //   expectedRole: 'user'
+          // }
         },
         { path: 'change-password',
             component: ChangePasswordComponent ,
-            canActivate: [AuthGuard],
-            data: {
-            expectedRole: 'user'
-        }
+        //     canActivate: [AuthGuard],
+        //     data: {
+        //     expectedRole: 'user'
+        // }
         },
         { path: 'help',
           component: HelpComponent ,
-          canActivate: [AuthGuard],
-          data: {
-            expectedRole: 'user'
-        }
+        //   canActivate: [AuthGuard],
+        //   data: {
+        //     expectedRole: 'user'
+        // }
         },
         { path: 'history',
           component: HistoryComponent ,
-          canActivate: [AuthGuard],
-          data: {
-            expectedRole: 'user'
-        }
+        //   canActivate: [AuthGuard],
+        //   data: {
+        //     expectedRole: 'user'
+        // }
         },
         { path: 'referrals',
           component: UserReferralsComponent ,
-          canActivate: [AuthGuard],
-          data: {
-            expectedRole: 'user'
-          }
+          // canActivate: [AuthGuard],
+          // data: {
+          //   expectedRole: 'user'
+          // }
         },
   ]
 },
@@ -101,10 +101,10 @@ const routes: Routes = [{ path: '', component: HomeComponent },
     children: [
           { path: 'dashboard',
           component: AdmindashboardComponent ,
-          canActivate: [RoleGuard],
-          data: {
-            expectedRole: 'admin'
-            }
+          // canActivate: [RoleGuard],
+          // data: {
+          //   expectedRole: 'admin'
+          //   }
           },
           { path: 'orders', component: OrdersComponent },
           { path: 'payment', component: PaymentComponent },
