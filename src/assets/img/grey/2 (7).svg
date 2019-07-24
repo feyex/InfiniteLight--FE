@@ -1,0 +1,15 @@
+<svg id="ic_assessment" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f9fafb;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <path id="Shape" class="cls-1" d="M16.222,18.25H2.028A2.03,2.03,0,0,1,0,16.222V2.028A2.03,2.03,0,0,1,2.028,0H16.222A2.03,2.03,0,0,1,18.25,2.028V16.222A2.03,2.03,0,0,1,16.222,18.25Zm-4.056-8.112v4.056h2.028V10.138ZM8.112,4.056V14.194h2.026V4.056ZM4.056,7.1v7.1H6.084V7.1Z" transform="translate(1.875 1.875)"/>
+  <path id="Shape-2" data-name="Shape" class="cls-2" d="M0,0H22V22H0Z"/>
+</svg>

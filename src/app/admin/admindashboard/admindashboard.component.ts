@@ -41,23 +41,23 @@ export class AdmindashboardComponent implements OnInit {
       "country": "Resolved Issues",
       "number": 139
     }];
-    let pieSeries = chart.series.push(new am4charts.PieSeries());
+    // let pieSeries = chart.series.push(new am4charts.PieSeries());
 
-    pieSeries.dataFields.value = "number";
-    pieSeries.dataFields.category = "country";
-    pieSeries.slices.template.stroke = am4core.color("#fff");
-    pieSeries.slices.template.strokeWidth = 2;
-    pieSeries.slices.template.strokeOpacity = 1;
+    // pieSeries.dataFields.value = "number";
+    // pieSeries.dataFields.category = "country";
+    // pieSeries.slices.template.stroke = am4core.color("#fff");
+    // pieSeries.slices.template.strokeWidth = 2;
+    // pieSeries.slices.template.strokeOpacity = 1;
 
-    // This creates initial animation
-    pieSeries.hiddenState.properties.opacity = 1;
-    pieSeries.hiddenState.properties.endAngle = -90;
-    pieSeries.hiddenState.properties.startAngle = -90;
-    pieSeries.labels.template.disabled = true;
-    pieSeries.colors.list = [
-      am4core.color("#f58053"),
-      am4core.color("#3d4094"),
-    ];
+    // // This creates initial animation
+    // pieSeries.hiddenState.properties.opacity = 1;
+    // pieSeries.hiddenState.properties.endAngle = -90;
+    // pieSeries.hiddenState.properties.startAngle = -90;
+    // pieSeries.labels.template.disabled = true;
+    // pieSeries.colors.list = [
+    //   am4core.color("#f58053"),
+    //   am4core.color("#3d4094"),
+    // ];
 
     // let series = chart.series.push(new am4charts.PieSeries());
     // chart.paddingRight = 20;
