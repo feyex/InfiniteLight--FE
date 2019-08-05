@@ -10,6 +10,8 @@ import { AdminAuthService } from '../../auth/admin-auth.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+
+  searchText:any;
   chart: any;
   ctx: any;
   chart2: any;

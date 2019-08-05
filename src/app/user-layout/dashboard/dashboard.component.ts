@@ -9,6 +9,9 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  chartCallback:any;
+  runOutsideAngularFlag:any;
   Highcharts: typeof Highcharts = Highcharts; // required
   chartConstructor: string = 'chart'; // optional string, defaults to 'chart'
   chartOptions: Highcharts.Options = { 

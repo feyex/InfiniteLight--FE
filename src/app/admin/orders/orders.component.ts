@@ -9,6 +9,7 @@ import { AdminAuthService } from '../../auth/admin-auth.service';
 })
 export class OrdersComponent implements OnInit {
 
+  searchText:any;
   user: any = {};
   collection: any;
 

@@ -11,6 +11,7 @@ import { AdminAuthService } from '../../auth/admin-auth.service';
 })
 export class AdmindashboardComponent implements OnInit {
 
+  searchText:any;
   chart: any;
   ctx:any;
   chart2:any;

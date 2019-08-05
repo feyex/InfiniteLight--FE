@@ -11,6 +11,7 @@ import { first } from 'rxjs/operators';
 })
 export class UserManagementComponent implements OnInit {
 
+  searchText:any;
   user = {
     firstname: "",
     lastname: "",

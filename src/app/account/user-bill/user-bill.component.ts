@@ -54,8 +54,8 @@ export class UserBillComponent implements OnInit {
       const amount = this.billformGroup.value.amount;
       const email = this.billformGroup.value.email;
       const ref = this.refNum;
-      const user_id = localStorage.userid;
-      console.log('refNum', ref);
+      const user_id = null;
+
       console.log('Hey, its me Paystack payment button');
       this.billService.processPayment(bill, state, disco, meter, amount, email, ref, user_id)
       .subscribe((res: any) => {
