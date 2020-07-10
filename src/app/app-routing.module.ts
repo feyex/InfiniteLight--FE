@@ -10,8 +10,8 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
 import { ChangePasswordComponent } from './dashboard/change-password/change-password.component';
 import { HelpComponent } from './dashboard/help/help.component';
 import { HistoryComponent } from './dashboard/history/history.component';
-import {AuthGuard} from './auth/auth.guard';
-import {RoleGuardGuard as RoleGuard} from './auth/role-guard.guard';
+import { AuthGuard } from './auth/auth.guard';
+import { RoleGuardGuard as RoleGuard } from './auth/role-guard.guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
@@ -39,83 +39,93 @@ const routes: Routes = [{ path: '', component: HomeComponent },
 {
   path: 'user', component: UserLayoutComponent,
   children: [
-        { path: 'dashboard',
-          component: DashboardComponent,
-        //   canActivate: [AuthGuard],
-        //   data: {
-        //     expectedRole: 'user'
-        // }
-      },
-        { path: 'manage-wallet',
-          component: ManageWalletComponent,
-        //   canActivate: [AuthGuard],
-        // data: {
-        //   expectedRole: 'user'
-        // }
-      },
-        { path: 'pay-bills',
-          component: PayBillsComponent
-         },
-        { path: 'pay-bills/:id',
-          component: PayBillsComponent
-        },
-        { path: 'profile',
-          component: ProfileComponent ,
-          // canActivate: [AuthGuard],
-          // data: {
-          //   expectedRole: 'user'
-          // }
-        },
-        { path: 'change-password',
-            component: ChangePasswordComponent ,
-        //     canActivate: [AuthGuard],
-        //     data: {
-        //     expectedRole: 'user'
-        // }
-        },
-        { path: 'help',
-          component: HelpComponent ,
-        //   canActivate: [AuthGuard],
-        //   data: {
-        //     expectedRole: 'user'
-        // }
-        },
-        { path: 'history',
-          component: HistoryComponent ,
-        //   canActivate: [AuthGuard],
-        //   data: {
-        //     expectedRole: 'user'
-        // }
-        },
-        { path: 'referrals',
-          component: UserReferralsComponent ,
-          // canActivate: [AuthGuard],
-          // data: {
-          //   expectedRole: 'user'
-          // }
-        },
+    {
+      path: 'dashboard',
+      component: DashboardComponent,
+      //   canActivate: [AuthGuard],
+      //   data: {
+      //     expectedRole: 'user'
+      // }
+    },
+    {
+      path: 'manage-wallet',
+      component: ManageWalletComponent,
+      //   canActivate: [AuthGuard],
+      // data: {
+      //   expectedRole: 'user'
+      // }
+    },
+    {
+      path: 'pay-bills',
+      component: PayBillsComponent
+    },
+    {
+      path: 'pay-bills/:id',
+      component: PayBillsComponent
+    },
+    {
+      path: 'profile',
+      component: ProfileComponent,
+      // canActivate: [AuthGuard],
+      // data: {
+      //   expectedRole: 'user'
+      // }
+    },
+    {
+      path: 'change-password',
+      component: ChangePasswordComponent,
+      //     canActivate: [AuthGuard],
+      //     data: {
+      //     expectedRole: 'user'
+      // }
+    },
+    {
+      path: 'help',
+      component: HelpComponent,
+      //   canActivate: [AuthGuard],
+      //   data: {
+      //     expectedRole: 'user'
+      // }
+    },
+    {
+      path: 'history',
+      component: HistoryComponent,
+      //   canActivate: [AuthGuard],
+      //   data: {
+      //     expectedRole: 'user'
+      // }
+    },
+    {
+      path: 'referrals',
+      component: UserReferralsComponent,
+      // canActivate: [AuthGuard],
+      // data: {
+      //   expectedRole: 'user'
+      // }
+    },
   ]
 },
 {
   path: 'admin', component: AdminlayoutComponent,
-    children: [
-          { path: 'dashboard',
-          component: AdmindashboardComponent ,
-          // canActivate: [RoleGuard],
-          // data: {
-          //   expectedRole: 'admin'
-          //   }
-          },
-          { path: 'orders', component: OrdersComponent },
-          { path: 'payment', component: PaymentComponent },
-          { path: 'history', component: AdminhistoryComponent },
-          { path: 'user_management', component: UserManagementComponent },
-          { path: 'referrals', component: ReferralsComponent },
-          { path: 'feeds', component: FeedsComponent },
-          { path: 'add_disco', component: AddDiscoComponent },
-          { path: 'support', component: SupportComponent },
-          { path: 'support_dashboard', component: SupportdashboardComponent },
-          { path: 'issueform', component: IssueformComponent },
+  children: [
+    {
+      path: 'dashboard',
+      component: AdmindashboardComponent,
+      // canActivate: [RoleGuard],
+      // data: {
+      //   expectedRole: 'admin'
+      //   }
+    },
+    { path: 'orders', component: OrdersComponent },
+    { path: 'payment', component: PaymentComponent },
+    { path: 'history', component: AdminhistoryComponent },
+    { path: 'user_management', component: UserManagementComponent },
+    { path: 'referrals', component: ReferralsComponent },
+    { path: 'feeds', component: FeedsComponent },
+    { path: 'add_disco', component: AddDiscoComponent },
+    { path: 'support', component: SupportComponent },
+    { path: 'support_dashboard', component: SupportdashboardComponent },
+    { path: 'issueform', component: IssueformComponent },
 
   ]
 },

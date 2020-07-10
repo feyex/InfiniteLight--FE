@@ -15,7 +15,7 @@ am4core.useTheme(am4themes_animated);
   styleUrls: ['./admindashboard.component.css']
 })
 export class AdmindashboardComponent implements OnInit {
-  private chart: am4charts.XYChart;
+  private chart: am4charts.XYSeries;
   chart1: any;
   ctx: any;
   chart2: any;
@@ -26,7 +26,8 @@ export class AdmindashboardComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private auth: AdminAuthService,
-    private zone: NgZone, ) {
+    private zone: NgZone, 
+    ) {
 
   }
 
@@ -36,11 +37,14 @@ export class AdmindashboardComponent implements OnInit {
 
     chart.data = [{
       "country": "Failed Token",
-      "number": 165
+      "number": 165  
     }, {
       "country": "Resolved Issues",
       "number": 139
     }];
+
+
+
     // let pieSeries = chart.series.push(new am4charts.PieSeries());
 
     // pieSeries.dataFields.value = "number";
